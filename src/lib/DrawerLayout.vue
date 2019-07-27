@@ -162,9 +162,10 @@ export default {
     this.canAnimate = this.animatable && supportsTransitions;
     const container = this.$el;
     // Get initial drawer size from its parentNode
+    // thatsparks edit: not 80% but "full width; aka 100%" :)
     if (typeof this.computedDrawerSize === 'undefined') {
       const containerSize = parseInt(window.getComputedStyle(container)[this.transformWithDirection('width')]),
-        defaultSize = containerSize * 0.8;
+        defaultSize = containerSize;
       this.computedDrawerSize = typeof this.computedDrawerSize === 'undefined' ? defaultSize : this.computedDrawerSize;
     }
 
